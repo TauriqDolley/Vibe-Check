@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Musicly - Discover new artists!</title>
+		<!-- Bootstrap -->
+		<link
+			rel="stylesheet"
+			href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.1/css/bootstrap.min.css"
+			integrity="sha384-VCmXjywReHh4PwowAiWNagnWcLhlEJLA5buUprzK8rxFgeH0kww/aWY76TfkUoSX"
+			crossorigin="anonymous"
+		/>
+
+		<link rel="stylesheet" href="./assets/scripts/styles/main.css" />
+		<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+		<script
+			type="module"
+			src="https://cdn.jsdelivr.net/npm/js-base64@3.4.5/base64.min.js"
+		></script>
+		<script src="assets/scripts/app.js" defer></script>
+	</head>
+	<body>
+		<!-- NAV BAR -->
+
+		<!-- Main Body -->
+
+		<nav
+			class="navbar navbar-expand-lg navbar-dark"
+			style="background: #0c0c0c;"
+		>
+			<a class="navbar-brand" href="#">
+				<!-- prettier-ignore -->
+				<!-- LOGO SVG -->
+				<svg
+					height="512"
+					viewBox="0 0 512 512"
+					width="512"
+					xmlns="http://www.w3.org/2000/svg"
+					id="navbar-main-logo"
+				>
+					<g>
+						<g>
+							<rect
+								fill="#e0e0e2"
+								height="336"
+								rx="16"
+								width="176"
+								x="48"
+								y="16"
+							/>
+							<path d="m72 56h128v80h-128z" fill="#3d9ae2" />
+							<circle cx="136" cy="248" fill="#57565c" r="64" />
+							<circle cx="136" cy="248" fill="#e0e0e2" r="16" />
+							<path d="m168 352h32v48h-32z" fill="#e0e0e2" />
+							<path d="m328 120h24v56h-24z" fill="#57565c" />
+							<path d="m320 72h48v48h-48z" fill="#e0e0e2" />
+							<path d="m368 64h24v64h-24z" fill="#57565c" />
+							<path d="m392 208h24v56h-24z" fill="#57565c" />
+							<path d="m384 160h48v48h-48z" fill="#e0e0e2" />
+							<path d="m432 152h24v64h-24z" fill="#57565c" />
+						</g>
+						<g>
+							<path
+								d="m72 144h128a8 8 0 0 0 8-8v-80a8 8 0 0 0 -8-8h-128a8 8 0 0 0 -8 8v80a8 8 0 0 0 8 8zm8-80h112v64h-112z"
+							/>
+							<path
+								d="m208 248a72 72 0 1 0 -72 72 72.081 72.081 0 0 0 72-72zm-72 56a56 56 0 1 1 56-56 56.063 56.063 0 0 1 -56 56z"
+							/>
+							<path
+								d="m136 224a24 24 0 1 0 24 24 24.028 24.028 0 0 0 -24-24zm0 32a8 8 0 1 1 8-8 8.009 8.009 0 0 1 -8 8z"
+							/>
+							<path d="m128 72h-32a8 8 0 0 0 0 16h32a8 8 0 0 0 0-16z" />
+							<path d="m160 72h-8a8 8 0 0 0 0 16h8a8 8 0 0 0 0-16z" />
+							<path
+								d="m456 144h-24a8 8 0 0 0 -8 8h-40a8 8 0 0 0 -8 8v48a8 8 0 0 0 8 8v48a8 8 0 0 0 8 8h8v16a8.011 8.011 0 0 1 -8 8h-40v-112a8 8 0 0 0 8-8v-48a8 8 0 0 0 8 8h24a8 8 0 0 0 8-8v-64a8 8 0 0 0 -8-8h-24a8 8 0 0 0 -8 8h-40a8 8 0 0 0 -8 8v48a8 8 0 0 0 8 8v48a8 8 0 0 0 8 8h8v152a8.011 8.011 0 0 1 -8 8h-16a8.011 8.011 0 0 1 -8-8v-192a24.032 24.032 0 0 0 -24-24h-8a24.032 24.032 0 0 0 -24 24v336a8.011 8.011 0 0 1 -8 8h-40a8.011 8.011 0 0 1 -8-8v-72h8a8 8 0 0 0 8-8v-40a24.032 24.032 0 0 0 24-24v-304a24.032 24.032 0 0 0 -24-24h-144a24.032 24.032 0 0 0 -24 24v304a24.032 24.032 0 0 0 24 24h96v40a8 8 0 0 0 8 8h8v72a24.032 24.032 0 0 0 24 24h40a24.032 24.032 0 0 0 24-24v-336a8.011 8.011 0 0 1 8-8h8a8.011 8.011 0 0 1 8 8v192a24.032 24.032 0 0 0 24 24h16a24.032 24.032 0 0 0 24-24v-24h40a24.032 24.032 0 0 0 24-24v-16a8 8 0 0 0 8-8v-48a8 8 0 0 0 8 8h24a8 8 0 0 0 8-8v-64a8 8 0 0 0 -8-8zm-80-72h8v48h-8zm-312 272a8.011 8.011 0 0 1 -8-8v-304a8.011 8.011 0 0 1 8-8h144a8.011 8.011 0 0 1 8 8v304a8.011 8.011 0 0 1 -8 8zm112 48v-32h16v32zm168-224h-8v-40h8zm-16-56v-32h32v32zm80 144h-8v-40h8zm16-56h-32v-32h32zm24 8h-8v-48h8z"
+							/>
+						</g>
+					</g>
+				</svg>
+				></a
+			>
+
+			<!-- NAVBAR Description -->
+			<div class="collapse navbar-collapse" id="navbarText">
+				<span class="navbar-text">
+					Find new music that passes the Vibe-Check
+				</span>
+			</div>
+		</nav>
+
+		<!-- JUMBOTRON -->
+		<div class="jumbotron" id="index-jumbotron">
+			<div class="container" id="main-container">
+				<div class="bg"></div>
+				<h1 class="display-4">Pass the Vibe Check!</h1>
+				<p class="lead">
+					Use the search bar below to find artists similar to what you're
+					enjoying right now.
+				</p>
+				<hr class="my-4" />
+				<!-- prettier-ignore -->
+				<p>
+                    Using Last.fm's API you'll be sure to find something you like.
+                    Enter their name below.
+				</p>
+
+				<form class="form-inline" id="search-form">
+					<input
+						id="search__artist-title"
+						class="form-control mr-sm-2"
+						type="search"
+						placeholder="Enter name here.."
+						aria-label="Search"
+					/>
+					<button
+						class="btn btn-primary btn-lg my-2 my-sm-0"
+						type="button"
+						id="search__btn"
+					>
+						Search Artists
+					</button>
+				</form>
+			</div>
+		</div>
+
+		<div class="jumbotron" id="artists-jumbo">
+			<div class="card-deck">
+				<div class="card text-center h-100" style="width: 18rem;" id="card_one">
+					<img
+						src="https://i.pinimg.com/originals/3a/f0/e5/3af0e55ea66ea69e35145fb108b4a636.jpg"
+						class="card-img-top"
+						alt="..."
+					/>
+					<div class="card-body">
+						<h5 class="card-title">Card title</h5>
+						<p class="card-text">
+							Some quick example text to build on the card title and make up the
+							bulk of the card's content.
+						</p>
+						<a href="#" class="btn btn-primary">Go somewhere</a>
+					</div>
+				</div>
+
+				<div class="card text-center h-100" style="width: 18rem;" id="card_two">
+					<img
+						src="https://i.pinimg.com/originals/3a/f0/e5/3af0e55ea66ea69e35145fb108b4a636.jpg"
+						class="card-img-top"
+						alt="..."
+					/>
+					<div class="card-body">
+						<h5 class="card-title">Card title</h5>
+						<p class="card-text">
+							Some quick example text to build on the card title and make up the
+							bulk of the card's content.
+						</p>
+						<a href="#" class="btn btn-primary">Go somewhere</a>
+					</div>
+				</div>
+
+				<div
+					class="card text-center h-100"
+					style="width: 18rem;"
+					id="card_three"
+				>
+					<img
+						src="https://i.pinimg.com/originals/3a/f0/e5/3af0e55ea66ea69e35145fb108b4a636.jpg"
+						class="card-img-top"
+						alt="..."
+					/>
+					<div class="card-body">
+						<h5 class="card-title">Card title</h5>
+						<p class="card-text">
+							Some quick example text to build on the card title and make up the
+							bulk of the card's content.
+						</p>
+						<a href="#" class="btn btn-primary">Go somewhere</a>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<script
+			src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+			integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+			crossorigin="anonymous"
+		></script>
+		<script
+			src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+			integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+			crossorigin="anonymous"
+		></script>
+		<script
+			src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.1/js/bootstrap.min.js"
+			integrity="sha384-XEerZL0cuoUbHE4nZReLT7nx9gQrQreJekYhJD9WNWhH8nEW+0c5qq7aIo2Wl30J"
+			crossorigin="anonymous"
+		></script>
+	</body>
+</html>
