@@ -11,7 +11,6 @@ let artistName = " ";
 if (sessionStorage.userAuthorized === undefined) {
 	sessionStorage.userAuthorized = "false";
 	sessionStorage.verifier = generateRandomString();
-	sessionStorage.url = window.location.href;
 }
 
 //Utility functions for encoding verifier/code challenge
@@ -65,7 +64,7 @@ const generateAuthURI = async () => {
 		queryString.stringify({
 			client_id: "d374fdb169264f3a87e5d068ca70d124",
 			response_type: "code",
-			redirect_uri: sessionStorage.url,
+			redirect_uri: "https://friendly-ramanujan-54e75f.netlify.app/",
 			code_challenge_method: "S256",
 			code_challenge: challenge
 		});
@@ -92,7 +91,7 @@ window.onload = async function () {
 			client_id: "d374fdb169264f3a87e5d068ca70d124",
 			grant_type: "authorization_code",
 			code: sessionStorage.getItem("code"),
-			redirect_uri: sessionStorage.url,
+			redirect_uri: "https://friendly-ramanujan-54e75f.netlify.app/",
 			code_verifier: sessionStorage.verifier
 		};
 
