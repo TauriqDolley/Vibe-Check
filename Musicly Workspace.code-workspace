@@ -1,7 +1,25 @@
 {
-    "folders": [
-        {
-            "path": "."
-        }
-    ]
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "..\\CSS N\\fonts-01-understanding-the-browser-settings-starting-code"
+		},
+		{
+			"path": "..\\CSS N\\Pomodoro Timer"
+		},
+		{
+			"path": "..\\CSS N\\grid-17-applying-autoflow"
+		},
+		{
+			"path": "..\\JS NOTES\\Wes-Bos-Captions-master\\Wes-Bos-Captions-master"
+		},
+		{
+			"path": "..\\JS NOTES\\Javascript 30"
+		},
+		{
+			"path": "..\\JS NOTES\\Experimenting"
+		}
+	]
 }

@@ -64,7 +64,7 @@ const generateAuthURI = async () => {
 		queryString.stringify({
 			client_id: "d374fdb169264f3a87e5d068ca70d124",
 			response_type: "code",
-			redirect_uri: "https://friendly-ramanujan-54e75f.netlify.app/",
+			redirect_uri: "https://tauriqdolley.github.io/Vibe-Check/index.html",
 			code_challenge_method: "S256",
 			code_challenge: challenge
 		});
@@ -91,7 +91,7 @@ window.onload = async function () {
 			client_id: "d374fdb169264f3a87e5d068ca70d124",
 			grant_type: "authorization_code",
 			code: sessionStorage.getItem("code"),
-			redirect_uri: "https://friendly-ramanujan-54e75f.netlify.app/",
+			redirect_uri: "https://tauriqdolley.github.io/Vibe-Check/index.html",
 			code_verifier: sessionStorage.verifier
 		};
 
