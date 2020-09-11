@@ -1,0 +1,96 @@
+/* .navbar .px-2 {
+	padding-left: ($spacer * 0.5) !important;
+	padding-right: ($spacer * 0.5) !important;
+} */
+
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+	background: #fffafb;
+}
+
+.navbar {
+	min-height: 80px;
+	background: #e3f2fd;
+}
+
+#navbar-main-logo {
+	max-width: 60px;
+	max-height: 60px;
+}
+
+#index-jumbotron {
+	margin-bottom: 0px;
+	position: relative;
+	background: none;
+	color: #dedddb;
+	overflow: hidden;
+	/* display: none; */
+}
+
+#artists-jumbo {
+	/* text-align: center; */
+	background: #ffefd3;
+}
+
+.card {
+	background: #020202;
+	color: #fffafb;
+	border: 0;
+	box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.2);
+	opacity: 0;
+	height: auto;
+}
+
+.fade-in {
+	opacity: 1;
+	transition-duration: 1000ms;
+}
+
+.card img {
+	width: 100%;
+	height: 32vw;
+	object-fit: cover;
+	padding: 3px;
+}
+
+.bg {
+	position: absolute;
+	padding: 10px;
+	top: 0;
+	left: 10px;
+	right: 0px;
+	bottom: 0;
+	background-image: url("../../Images/header-image.jfif");
+	background-position: 0% 90%;
+	background-size: cover;
+	background-repeat: no-repeat;
+	-webkit-filter: blur(1px);
+	-moz-filter: blur(1px);
+	-o-filter: blur(1px);
+	-ms-filter: blur(1px);
+	/* filter: contrast(200%); */
+	filter: blur(1px);
+	filter: brightness(0.6);
+	z-index: -1;
+	transform: scale(1.1, 1.05);
+}
+#main-container {
+	padding: 10px;
+	margin: 0;
+	color: white;
+	display: inline-block;
+}
+
+#search__artist-title {
+	padding: 10px;
+	min-height: 50px;
+	width: 50vw;
+	min-width: 150px;
+	display: inline-block;
+}
+
+/* #search-form {
+} */
