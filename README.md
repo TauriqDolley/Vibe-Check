@@ -5,8 +5,9 @@ Vibe Check is a web-app that utilises Spotify's Web API to recommend similar art
 [![Untitled.png](https://i.postimg.cc/JzPgD25G/Untitled.png)](https://postimg.cc/4YHwjwMg)
 
 ## Usage
+The website is hosted on GitHub pages and can be found at https://tauriqdolley.github.io/vibe-check/
 
-Vibe Check usess 0Auth to authenticate a user's account afterwhich the user can utilise the search functionality. 
+Vibe Check uses 0Auth to authenticate a user's account afterwhich the user can utilise the search functionality. 
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
